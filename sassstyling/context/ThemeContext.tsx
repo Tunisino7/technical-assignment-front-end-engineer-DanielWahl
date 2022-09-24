@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 export type TTheme = "light" | "dark";
 
@@ -33,3 +33,5 @@ export const ThemeProvider: React.FC<{
         </ThemeContext.Provider>
     );
 };
+
+export const useTheme = () => useContext(ThemeContext);

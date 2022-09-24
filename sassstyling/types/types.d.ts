@@ -4,6 +4,8 @@ export interface IPost {
     intro: string;
     content: string;
     date: string | Date;
+    image: string;
+    slug: string;
 }
 
 export type TPosts = IPost[] | null;

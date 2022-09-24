@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { promises as fs } from "fs";
 import path from "path";
+import { promises as fs } from "fs";
+
 type Data = {
     data?: any;
     status: number | string;
@@ -8,19 +9,35 @@ type Data = {
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
-    if (req.method === "GET") {
+    if (req.method === "POST") {
         try {
+            let body = req.body;
             const jsonDirectory = path.join(process.cwd(), "data");
 
             //Read the json data file data.json
-            const posts = await fs.readFile(
+            const array = await fs
+                .readFile(jsonDirectory + "/posts.json", "utf-8")
+                .then((result) => {
+                    return JSON.parse(result);
+                })
+                .then((result) => {
+                    result.push(body);
+                    return result;
+                });
+
+            await fs.writeFile(
                 jsonDirectory + "/posts.json",
+                JSON.stringify(array),
                 "utf-8",
             );
 
+            const now = await fs
+                .readFile(jsonDirectory + "/posts.json", "utf-8")
+                .then((result) => JSON.parse(result));
+
             res.status(200).json({
                 status: 200,
-                data: posts ?? [],
+                data: { success: true, data: now },
             });
         } catch (error: any) {
             res.status(400).json({
@@ -36,4 +53,5 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         });
     }
 };
+
 export default handler;

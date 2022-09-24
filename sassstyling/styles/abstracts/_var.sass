@@ -6,41 +6,57 @@
 
 // COLORS
 
-$white:             	white
-$black:             	black
+$white:             	var(--white, #ffffff)
+$black:             	var(--black, #000000)
 $lightgrey:         	lightgrey
-$lightergrey:			#dcdcdc
+$lightergrey:           #e3e3e3
 $verylightgrey:     	#f3f3f3
 
-$textLight:				white
-$textDark:				black
+$textLight:				var(--textLight, #ffffff)
+$textDark:				var(--textDark, #282828)
+$textGrey:              grey
 
-$primary: 				#00506E
-$primaryHover:      	darken($primary, 20%)
-$primaryLighter: 		#DFF0FA
+$primary:               var(--primary400, #037DC0)
+$primary300:            var(--primary300, #429ED0)
+$primaryHover:      	$primary300
+$primary100:            var(--primary100, #9ACBE6)
+$primaryLighter: 		$primary100
+$primary800:            var(--primary800, #075885)
+$primaryBg:             var(--background, #ffffff)
+$primaryText:           var(--primaryText, #282828)
 
-$secondary: 			#5FB4E6
-$secondaryHover:    	darken($secondary, 20%)
-$secondaryLighter: 		#DFF0FA
+$secondary:             var(--secondary400, #2D3142)
+$secondary300:          var(--secondary300, #616471)
+$secondaryHover:      	$primary300
+$secondary100:          var(--secondary100, #ABADB3)
+$secondaryLighter: 		$primary100
+$secondary800:          var(--secondary800, #12141B)
 
-$third:             	#EB0046
-$thirdHover:    		darken($third, 20%)
+$accent:                var(--third400, #A4243B)
+$accent300:             var(--third300, #BB5B6C)
+$accentHover:      	    $primary300
+$accent100:             var(--third100, #DBA7B1)
+$accentLighter: 		$primary100
+$accent800:             var(--third800, #7B1A2C)
 
-$accent:            	#EB0046
-$accentHover:    		darken($accent, 20%)
+$error:                 var(--error, #7B1A2C)
+
 
 $lightPrimary: 			#dddddd
-$lightBase:         	#ffffff
-$lightBackground: 		#F5F5F5
+$lightBase:         	var(--base, #F6F6F6)
+$base:                  var(--base, #F6F6F6)
+$lightBackground: 		var(--background, #F6F6F6)
 $lightgrey: 			#949494
 
-$darkTransparent:   	rgba(104, 104, 104, 0.3)
-$darkPrimary:       	#212121
-$darkBase:          	#303030
-$darkCard:          	#424242
-$darkLight: #757575
+$cardBackground:        var(--card, #F6F6F6)
+$cardBackgroundHover:   var(--cardHover, #F6F6F6)
+$cardHoverBoxShadow:    var(--cardHoverBoxShadow, none)
+
+$strokeColor:           var(--strokeColor, #e4e4e4)
 
 $navBackground:     	transparent //$primary
+$boxShadow:             0px 0 10px rgba(0, 0, 0, 0.14)
+$boxShadowFocus:        0px 0 10px rgba($primary)
 
 // SIZES
 $headerHeight: 			800px
@@ -48,9 +64,12 @@ $headerSmallHeight:		112px
 $navHeight:         	80px
 $navWidth: 				500px
 $navMobileHeight: 		65px
-$borderRadiusSize:		10px
+
+$borderRadiusSize:		.4rem
 $borderRadiusHalf: 		math.div($borderRadiusSize, 4)
 $borderRadius:      	$borderRadiusSize
+$borderStyle:           2px solid $white
+$borderSize:            1px
 
 $gridSpacing:       	2rem
 $sliderHeight: 			470px

@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import PostsList from "../components/PostsList";
 import { getPosts } from "../helpers/fetchers";
 import { TPosts } from "../types/types";
+import Layout from "../components/Layout";
 
 interface HomeProps {
     posts: TPosts;
@@ -11,18 +11,17 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ posts }) => {
     return (
-        <div className="global">
-            <header></header>
-            <main className="content">
-                <PostsList posts={posts} />
-            </main>
-            <footer></footer>
-        </div>
+        <Layout title={"Posts"}>
+            <Head>
+                <title>Posts</title>
+            </Head>
+            <PostsList posts={posts} />
+        </Layout>
     );
 };
 
 export async function getServerSideProps() {
-    const posts: TPosts = null; //await getPosts();
+    const posts: TPosts = await getPosts();
     return {
         props: {
             posts,

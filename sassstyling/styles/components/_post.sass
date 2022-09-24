@@ -4,3 +4,46 @@
 //              POSTS              -
 //----------------------------------
 
+.card
+	padding: 1rem
+	border-radius: $borderRadius
+	background: $cardBackground
+	display: block
+	transition: $transition-default
+
+	&:hover
+		background: $cardBackgroundHover
+		box-shadow: $cardHoverBoxShadow
+
+	&:focus-visible
+		background: $cardBackgroundHover
+		box-shadow: $boxShadowFocus
+
+	&__content
+		display: grid
+		grid-template-columns: auto 160px
+		gap: 2rem
+
+	&__title
+	&__date
+	&__intro
+	&__image
+		width: 100%
+		height: auto
+
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+			background-repeat: no-repeat
+
+	&-large
+		position: relative
+		background-color: grey
+		color: #fff
+		margin-bottom: 1rem
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		padding: 2rem
+		border-radius: $borderRadius

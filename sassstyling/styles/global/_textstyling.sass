@@ -1,0 +1,221 @@
+@use "../abstracts" as *
+
+//----------------------------------
+//           TEXT STYING           -
+//----------------------------------
+
+.uppercase
+	text-transform: uppercase
+
+.color
+	&--dark
+		color: $textDark
+		p, h1, h2, h3, h4, h5, span
+			color: $textDark
+	&--light
+		color: $textLight
+		p, h1, h2, h3, h4, h5, span
+			color: $textLight
+
+	&--lightgrey, &--lightGrey
+		color: $textLight
+		p, h1, h2, h3, h4, h5, span
+			color: $textLight
+
+	&--primary
+		color: $primary
+		p, h1, h2, h3, h4, h5, span
+			color: $primary
+	&--secondary
+		color: $secondary
+	&--red
+		color: #be2020
+	&--grey
+		color: $textGrey
+
+.text--center, .align--center
+	text-align: center
+
+.text--left, .align--left
+	text-align: left
+
+.text--right, .align--right
+	text-align: right
+
+.strong, .bold
+	font-weight: 800
+
+.capital
+	text-transform: capitalize
+.uppercase
+	text-transform: uppercase
+.lowercase
+	text-transform: lowercase
+
+.fs
+	&--1
+		font-size: 1rem
+	&--1-2
+		font-size: 1.2rem
+	&--1-25
+		font-size: 1.25rem
+	&--1-5
+		font-size: 1.5rem
+	&--2
+		font-size: 2rem
+
+.fw
+	&--200
+		font-weight: 200
+	&--300
+		font-weight: 300
+	&--400
+		font-weight: 400
+	&--500
+		font-weight: 500
+	&--600
+		font-weight: 600
+	&--800
+		font-weight: 800
+
+/**** FONT ****/
+h1
+	color: $textDark
+	font-family: "Roboto", sans-serif
+	text-transform: uppercase
+	font-size: 3rem
+	font-weight: 900
+	@include media-below(phone)
+		font-size: 2rem
+
+
+h2
+	color: $textDark
+	font-family: "Roboto", sans-serif
+	text-transform: uppercase
+	font-size: 2.25rem
+	font-weight: 900
+
+	@include media-below(phone)
+		font-size: 1.5rem
+
+	&.small
+		font-size: 2rem
+
+h3
+	font-family: "Roboto", sans-serif
+	text-transform: uppercase
+	font-size: 1.75rem
+	font-weight: 700
+	color: $textDark
+	@include media-below(phone)
+		font-size: 1.3rem
+
+h4, h5
+	color: $textLight
+
+h1, h2, h3, h4, h5
+	&.padding--block
+		padding-block: 1rem
+
+	&.padding--block--small
+		padding-block: .5rem
+
+	&.center
+		text-align: center
+
+	&.margin--none
+		margin: 0 !important
+	&.white
+		color: $white
+	&.primary
+		color: $primary
+	&.secondary
+		color: $secondary
+
+p
+	padding: 0
+	font-family: "Roboto", sans-serif
+	font-weight: 300
+	font-size: 1rem
+	color: $textDark
+	line-height: 1.45rem
+
+	position: relative
+	z-index: 0
+
+	&.paddingVertical, &.is-style-padding-vertical
+		padding: 1rem 0
+
+	&.center, &.is-style-center
+		text-align: center
+
+	&.white, &.is-style-white
+		color: white
+
+	&.light, &.is-style-light
+		font-weight: 200
+
+	&.color--lighter
+		color: $lightgrey
+
+	&.center
+		text-align: center
+
+
+main
+	ul, ol
+		margin-left: 2rem
+		font-size: 1rem
+		font-family: "Raleway", sans-serif
+
+hr
+	border: 0
+	height: 1px
+	background: $black
+
+
+a
+	text-decoration: none
+	outline: none
+	font-family: Raleway, sans-serif
+	cursor: pointer
+
+	&:hover, &:focus
+		text-decoration: none
+
+
+p > a, .document a, .link
+	text-decoration: none
+	outline: none
+	font-family: Raleway, sans-serif
+	cursor: pointer
+	color: $textLight
+	border: 1px solid transparent
+	transition: $transition-default
+
+	&:hover, &:focus
+		border-bottom: 1px solid $textLight
+		text-decoration: none
+
+
+.description
+	font-family: Raleway, sans-serif
+	font-size: 1rem
+	font-weight: 400
+	color: $textGrey
+	text-transform: uppercase
+
+.email-link
+	color: $primary
+	padding: 0 .2rem .2rem 2rem
+	font-weight: 600
+
+	@include pseudo($loc: after, $top: 0, $left: 0)
+		//background: url("/images/icons/email.svg") no-repeat center
+		background: $primary
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V8L12 13L20 8V18ZM12 11L4 6H20L12 11Z' /%3E%3C/svg%3E")
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V8L12 13L20 8V18ZM12 11L4 6H20L12 11Z' /%3E%3C/svg%3E")
+		height: 1.5rem
+		width: 1.5rem
+		transform: translateY(-.15rem)
