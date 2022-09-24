@@ -23,7 +23,7 @@ const CreatePostForm: FC<Props> = ({}) => {
         dayjs(new Date().toDateString()),
     );
     const [image, setImage] = useState("https://source.unsplash.com/random");
-    const [intro, setIntro] = useState("Lorem upsum");
+    const [intro, setIntro] = useState("Lorem ipsum");
     const [content, setContent] = useState("Lorem ipsum dolor sit amet");
 
     const [fillAllError, setFillAllError] = useState(false);

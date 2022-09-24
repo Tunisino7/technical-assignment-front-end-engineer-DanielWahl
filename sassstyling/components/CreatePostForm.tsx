@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { createPost } from "../helpers/fetchers";
 import { slugify } from "../helpers/textLib";
 import Input from "./Input";
+import TextArea from "./TextArea";
 
 interface Props {}
 
@@ -18,7 +19,7 @@ const CreatePostForm: FC<Props> = ({}) => {
             new Date().getDate(),
     );
     const [image, setImage] = useState("https://source.unsplash.com/random");
-    const [intro, setIntro] = useState("Lorem upsum");
+    const [intro, setIntro] = useState("Lorem ipsum");
     const [content, setContent] = useState("Lorem ipsum dolor sit amet");
 
     const [fillAllError, setFillAllError] = useState(false);
@@ -120,19 +121,25 @@ const CreatePostForm: FC<Props> = ({}) => {
                     setImage(e.target.value);
                 }}
             />
-            <textarea
+            <TextArea
+                name={"intro"}
+                label={"Introduction"}
                 value={intro}
                 onChange={(e) => {
                     setIntro(e.target.value);
                 }}
+                rows={2}
             />
 
-            <textarea
+            <TextArea
+                name={"content"}
+                label={"Content"}
                 required
                 value={content}
                 onChange={(e) => {
                     setContent(e.target.value);
                 }}
+                rows={6}
             />
             <div className="flex flex-justify--end">
                 <div className="relative">
