@@ -1,0 +1,83 @@
+@use "sass:math"
+//----------------------------------
+//             VARIABLES           -
+//----------------------------------
+
+
+// COLORS
+
+$white:             	white
+$black:             	black
+$lightgrey:         	lightgrey
+$lightergrey:			#dcdcdc
+$verylightgrey:     	#f3f3f3
+
+$textLight:				white
+$textDark:				black
+
+$primary: 				#00506E
+$primaryHover:      	darken($primary, 20%)
+$primaryLighter: 		#DFF0FA
+
+$secondary: 			#5FB4E6
+$secondaryHover:    	darken($secondary, 20%)
+$secondaryLighter: 		#DFF0FA
+
+$third:             	#EB0046
+$thirdHover:    		darken($third, 20%)
+
+$accent:            	#EB0046
+$accentHover:    		darken($accent, 20%)
+
+$lightPrimary: 			#dddddd
+$lightBase:         	#ffffff
+$lightBackground: 		#F5F5F5
+$lightgrey: 			#949494
+
+$darkTransparent:   	rgba(104, 104, 104, 0.3)
+$darkPrimary:       	#212121
+$darkBase:          	#303030
+$darkCard:          	#424242
+$darkLight: #757575
+
+$navBackground:     	transparent //$primary
+
+// SIZES
+$headerHeight: 			800px
+$headerSmallHeight:		112px
+$navHeight:         	80px
+$navWidth: 				500px
+$navMobileHeight: 		65px
+$borderRadiusSize:		10px
+$borderRadiusHalf: 		math.div($borderRadiusSize, 4)
+$borderRadius:      	$borderRadiusSize
+
+$gridSpacing:       	2rem
+$sliderHeight: 			470px
+$hamburgerLineLength:	50px
+
+$bigScreen:         	1920px
+$contentWithMargin:		1464px
+$content:           	1400px
+$desktop:           	1080px
+$tablet:            	920px
+$phone:             	720px
+$smallPhone:        	420px
+
+
+// Z-Indexes
+$zHeader: 				100
+$zNavigation: 			200
+$zNavigationHamburger: 	190
+$zOverlay: 				100
+$zPopup: 				300
+$zFab:					80
+
+// Transitions
+$transition-default: 	all .3s ease
+
+// Box-shadows
+$boxShadow: 			0 4px 9px rgba(0, 0, 0, 0.12)
+$boxShadowHover: 		0 4px 15px rgba(0, 0, 0, 0.2)
+$boxShadowFocus:		0 0 1px 4px $accent
+
