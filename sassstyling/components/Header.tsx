@@ -13,20 +13,20 @@ const Header: FC<Props> = ({ title }) => {
 
     return (
         <header className="header content">
-            <div className="header__content grid grid__three-thirds">
-                <div className="grid__item">
+            <div className="header__content grid grid__three-thirds ">
+                <div className="grid__item flex flex-justify--start">
                     <Link href={"/"}>
-                        <button>Posts</button>
+                        <button className="button empty">Posts</button>
                     </Link>
                     <Link href={"/post/create"}>
-                        <button>Create Post</button>
+                        <button className="button empty">Create Post</button>
                     </Link>
                 </div>
-                <div className="grid__item">
+                <div className="grid__item flex flex-center--horizontal">
                     <h2>{title}</h2>
                 </div>
                 <div className="grid__item flex flex-justify--end">
-                    <button onClick={toggleTheme}>
+                    <button className="button blank" onClick={toggleTheme}>
                         {theme === "dark" ? (
                             <Brightness7Icon />
                         ) : (

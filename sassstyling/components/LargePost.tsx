@@ -22,10 +22,12 @@ const LargePost: FC<Props> = ({ data }) => {
             <div className="grid grid__half-half">
                 <div className="grid__item">
                     <div>
-                        <h3>{title}</h3>
-                        <p>{truncateText(intro)}</p>
+                        <h1 className="card-large__title">{title}</h1>
+                        <p className="card-large__intro">
+                            {truncateText(intro)}
+                        </p>
                         <Link as={`/post/${slug}`} href="/post/[slug]">
-                            <a>{"Read more"}</a>
+                            <a>Read more</a>
                         </Link>
                     </div>
                 </div>

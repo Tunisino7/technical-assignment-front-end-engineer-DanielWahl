@@ -13,7 +13,7 @@ const PostsList: FC<Props> = ({ posts }) => {
     return (
         <div>
             <LargePost data={posts[0]} />
-            <div className="grid grid__half-half grid-align--flex-start">
+            <div className="grid grid__half-half grid--gap-l grid-align--flex-start paddingTop">
                 {posts?.map((post, index) => {
                     if (index === 0) return null;
                     return <PostCard key={"post__" + index} data={post} />;

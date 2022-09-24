@@ -24,9 +24,9 @@ const PostCard: FC<Props> = ({ data }) => {
                             <p className="card__date">{formattedDate}</p>
                             <p className="card__intro">{truncateText(intro)}</p>
                         </div>
-                        <div className={"card__image"}>
-                            <img src={image} alt={title} />
-                        </div>
+                    </div>
+                    <div className={"card__image"}>
+                        <img src={image} alt={title} />
                     </div>
                 </a>
             </Link>

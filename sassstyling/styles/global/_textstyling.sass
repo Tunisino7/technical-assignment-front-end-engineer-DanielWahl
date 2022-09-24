@@ -81,20 +81,24 @@
 /**** FONT ****/
 h1
 	color: $textDark
-	font-family: "Roboto", sans-serif
-	text-transform: uppercase
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif
+	font-weight: 400
 	font-size: 3rem
-	font-weight: 900
+	line-height: 1.167
+	letter-spacing: 0em
+	margin-bottom: 0.35em
+
 	@include media-below(phone)
 		font-size: 2rem
 
 
 h2
 	color: $textDark
-	font-family: "Roboto", sans-serif
-	text-transform: uppercase
-	font-size: 2.25rem
-	font-weight: 900
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif
+	font-weight: 400
+	font-size: 1.5rem
+	line-height: 1.334
+	letter-spacing: 0em
 
 	@include media-below(phone)
 		font-size: 1.5rem
@@ -103,7 +107,7 @@ h2
 		font-size: 2rem
 
 h3
-	font-family: "Roboto", sans-serif
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif
 	text-transform: uppercase
 	font-size: 1.75rem
 	font-weight: 700
@@ -135,11 +139,12 @@ h1, h2, h3, h4, h5
 
 p
 	padding: 0
-	font-family: "Roboto", sans-serif
-	font-weight: 300
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif
 	font-size: 1rem
 	color: $textDark
-	line-height: 1.45rem
+	font-weight: 300
+	line-height: 1.75
+	letter-spacing: 0.00938em
 
 	position: relative
 	z-index: 0
@@ -180,22 +185,12 @@ a
 	outline: none
 	font-family: Raleway, sans-serif
 	cursor: pointer
-
-	&:hover, &:focus
-		text-decoration: none
-
-
-p > a, .document a, .link
-	text-decoration: none
-	outline: none
-	font-family: Raleway, sans-serif
-	cursor: pointer
-	color: $textLight
+	color: $primary
 	border: 1px solid transparent
 	transition: $transition-default
 
 	&:hover, &:focus
-		border-bottom: 1px solid $textLight
+		border-bottom: 1px solid $primary
 		text-decoration: none
 
 
